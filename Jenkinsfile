@@ -7,13 +7,13 @@ pipeline {
         stage('Build') {
             steps {
                 // Clean and build the Maven project
-                bat 'mvn -f demoProject/pom.xml clean package'
+                bat 'mvn  clean package'
             }
         }
         stage('Test') {
             steps {
                 // Run tests
-                bat 'mvn -f demoProject/pom.xml test'
+                bat 'mvn  test'
             }
         }
         stage('Deploy') {
@@ -26,7 +26,7 @@ pipeline {
         stage('Clean Up') {
             steps {
                 // Clean up any temporary files or resources
-                bat 'mvn -f demoProject/pom.xml clean'
+                bat 'mvn  clean'
             }
         }
     }
